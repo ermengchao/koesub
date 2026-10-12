@@ -1,0 +1,32 @@
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14"]
+build-backend = "uv_build"
+
+[project]
+name = "koesub"
+version = "0.1.0"
+description = "Platform subtitles, Whisper transcription and subtitled video exports"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "ermengchao" }]
+requires-python = ">=3.11"
+dependencies = [
+    "openai-whisper",
+    "torch>=2.0",
+    "Pillow>=10.0",
+    "yt-dlp[default]==2026.8.19",
+]
+
+[project.urls]
+Repository = "https://github.com/ermengchao/koesub"
+Issues = "https://github.com/ermengchao/koesub/issues"
+
+[project.scripts]
+koesub = "koesub.cli:main"
+
+[tool.uv.build-backend]
+module-root = ""
+source-include = ["tests/**", "skills/**"]
+
+# ffmpeg and ffprobe are external executables and must be installed separately.

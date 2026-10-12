@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Subtitles"
+  short_description: "Fetch or transcribe videos for timestamped analysis"
+  default_prompt: "Use $video-subtitles to obtain this video’s subtitles and analyze its content with timestamps, identifying platform captions or local Whisper transcription."
